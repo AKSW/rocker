@@ -90,12 +90,12 @@ public class ModelManager {
 		while(statIt.hasNext()) {
 			Statement s = statIt.next();
 			Resource dataset = s.getSubject();
-			String graph = s.getObject().asResource().getURI();
+			String graph = s.getObject().as(Resource.class).getURI();
 			// get all classes for each graph
 			ArrayList<Resource> classes = new ArrayList<>();
 			Iterator<RDFNode> nodeIt = model.listObjectsOfProperty(dataset, ResourceFactory.createProperty("http://aksw.org/deduplication/requiredClasses"));
 			while(nodeIt.hasNext()) {
-				Resource c = nodeIt.next().asResource();
+				Resource c = nodeIt.next().as(Resource.class);
 				classes.add(c);
 			}
 			res.put(graph, classes);

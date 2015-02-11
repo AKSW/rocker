@@ -115,7 +115,7 @@ public class Rocker implements Runnable {
 		Model m = ModelFactory.createDefaultModel();
 		
 		try {
-			m.read(inputFile);
+			m.read(inputFile, null, "N-TRIPLES");
 		} catch (RiotException e) {}
 
 		

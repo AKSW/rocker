@@ -11,6 +11,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.jena.riot.RiotException;
 import org.apache.log4j.Logger;
 
+import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
@@ -53,7 +54,7 @@ public class DataIndexer {
 		
 		int errors = 0;
 		try {
-			m.read(filename);
+			m.read(filename, null, "N-TRIPLES");
 		} catch (RiotException e) {
 			errors++;
 		}
@@ -161,7 +162,7 @@ public class DataIndexer {
 					+ "blanknode/BN" + DigestUtils.shaHex(o.toString())
 					: ((Resource) o).getURI();
 		else
-			return o.asLiteral().getString();
+			return o.as(Literal.class).getString();
 	}
 
 	private static void print(String s) {
