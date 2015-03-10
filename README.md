@@ -1,4 +1,4 @@
-# Welcome to the homepage of ROCKER - Refinement Operator Approach for Key Discovery! 
+# ROCKER ─ A Refinement Operator for Key Discovery #
 
 ## Run from terminal ##
 
@@ -42,5 +42,5 @@ You may also download the [Java library](https://github.com/AKSW/rocker/releases
 
 ## Citing ROCKER ##
 
-Please refer to the paper *T. Soru, E. Marx, A.-C. Ngonga Ngomo, "ROCKER - A Refinement Operator for Key Discovery"*, in proceedings of the 24th International Conference on World Wide Web, WWW 2015. [[pdf](http://svn.aksw.org/papers/2015/WWW_Rocker/public.pdf)]
+Please refer to the paper *T. Soru, E. Marx, A.-C. Ngonga Ngomo, "ROCKER ─ A Refinement Operator for Key Discovery"*, in proceedings of the 24th International Conference on World Wide Web, WWW 2015. [[pdf](http://svn.aksw.org/papers/2015/WWW_Rocker/public.pdf)]
 
