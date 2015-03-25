@@ -40,6 +40,14 @@ We recommend to run your experiments on a machine with at least 8 GB of RAM.
 
 You may also download the [Java library](https://github.com/AKSW/rocker/releases/download/v1.2.1/rocker-1.2.1.jar) without dependencies.
 
+```
+Rocker r = null;
+r = new Rocker("restaurant_1", "file:///home/rocker/OAEI_2011_Restaurant_1.nt",
+        "http://www.okkam.org/ontology_restaurant1.owl#Restaurant", false, true, 1.0);
+r.run();
+Set<CandidateNode> results = r.getKeys();
+```
+
 ## Citing ROCKER ##
 
 Please refer to the paper *T. Soru, E. Marx, A.-C. Ngonga Ngomo, "ROCKER ─ A Refinement Operator for Key Discovery"*, in proceedings of the 24th International Conference on World Wide Web, WWW 2015. [[pdf](http://svn.aksw.org/papers/2015/WWW_Rocker/public.pdf)]
