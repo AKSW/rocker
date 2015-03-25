@@ -24,6 +24,7 @@ public class CandidateNode implements Comparable<CandidateNode> {
 	private List<CandidateNode> children;
 	// not used
 	private int index;
+	private boolean isAlmostKey = false;
 	
 	private Set<String> faultyResourceURIs;
 
@@ -48,6 +49,14 @@ public class CandidateNode implements Comparable<CandidateNode> {
 
 	public double getScore() {
 		return score;
+	}
+
+	public boolean isAlmostKey() {
+		return isAlmostKey;
+	}
+
+	public void setAlmostKey(boolean isAlmostKey) {
+		this.isAlmostKey = isAlmostKey;
 	}
 
 	public int getIndex() {

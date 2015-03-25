@@ -147,7 +147,7 @@ public class Algorithm {
 			Set<CandidateNode> children = refine(pivot, atomic, c, keys, maxNonKeys, atomicMap);
 			updateNonKeys(maxNonKeys, children);
 			for(CandidateNode child : children) {
-				if(child.getScore() == 1.0) {
+				if(child.isAlmostKey()) {
 					keys.add(child);
 					print("Key: "+child);
 					if(FIND_ONE_KEY)
@@ -155,7 +155,7 @@ public class Algorithm {
 				}
 			}
 			for(CandidateNode child : children) {
-				if(child.getScore() == 1.0) {
+				if(child.isAlmostKey()) {
 					if(FAST_SEARCH) {
 						Iterator<CandidateNode> it = atomic.iterator();
 						while(it.hasNext()) {

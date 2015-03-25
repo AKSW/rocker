@@ -80,12 +80,11 @@ public class Score {
 			e.printStackTrace();
 		}
 		
-		// TODO better implement this hack for getting quasi-keys
-//		return (double) distincts.size() / c.getResourceCount();
 		if(distincts.size() >= quasi_keys_rate * c.getResourceCount()) {
 			double d = (double) distincts.size() / c.getResourceCount();
 			LOGGER.info("almost-key found: "+d+" "+cn.getProperties());
-			return 1.0;
+			cn.setAlmostKey(true);
+			return d;
 		}
 		return (double) distincts.size() / c.getResourceCount();
 	}
