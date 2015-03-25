@@ -36,6 +36,22 @@ public class RockerKeyDiscovery implements IKeyDiscovery {
 		return rocker.getKeys();
 	}
 	
+	public static void main(String[] args) {
+		
+		Rocker rocker = null;
+		
+		try {
+			rocker = new Rocker(args[0], args[1], args[2], Boolean.parseBoolean(args[3]), 
+					Boolean.parseBoolean(args[4]), Double.parseDouble(args[5]));
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		rocker.run();
+	}
+	
 	/**
 	 * @return The algorithm object which provides insights from the key discovery task.
 	 */
