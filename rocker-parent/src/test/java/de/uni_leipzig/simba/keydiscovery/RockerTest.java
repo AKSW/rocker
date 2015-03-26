@@ -20,12 +20,12 @@ import de.uni_leipzig.simba.keydiscovery.rockerone.Rocker;
  */
 public class RockerTest {
 	
-	//@Test
+	@Test
 	public void testGetKeys() {
 
 		String name = "person11";
 		String workingDir = System.getProperty("user.dir");
-		String file = "file://"+workingDir+"/data/OAEI_2011_Person1_1.nt";
+		String file = "file://"+workingDir+"/src/main/resources/OAEI_2011_Person1_1.nt";
 		String classname = "http://www.okkam.org/ontology_person1.owl#Person";
 		
 		boolean find1key = false;

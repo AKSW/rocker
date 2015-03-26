@@ -1,8 +1,10 @@
 package de.uni_leipzig.simba.keydiscovery.rockerone;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -24,6 +26,7 @@ public class Algorithm {
 	private final static Logger LOGGER = Logger.getLogger("ROCKER");
 
 	private Set<CandidateNode> classKeys;
+	private List<CandidateNode> atomicCandidates;
 	private String outputFile;
 	private RKDClassTask c;
 	private boolean FIND_ONE_KEY, FAST_SEARCH;
@@ -44,7 +47,9 @@ public class Algorithm {
 	}
 	
 	protected Set<CandidateNode> start() {
-				
+		
+		atomicCandidates = new ArrayList<CandidateNode>();
+		
 		print("Class: "+c.getClassName());
 		
 		Timer t = new Timer();
@@ -110,6 +115,7 @@ public class Algorithm {
 		while(itr.hasNext()) {
 			CandidateNode cand = itr.next();
 			print("score("+cand+") = "+cand.getScore());
+			atomicCandidates.add(cand);
 			if(cand.getScore() < 1E-3)
 				itr.remove();
 		}
@@ -172,6 +178,10 @@ public class Algorithm {
 				}
 			}
 		}
+	}
+
+	public List<CandidateNode> getAtomicCandidates() {
+		return atomicCandidates;
 	}
 
 	private Set<CandidateNode> refine(CandidateNode node, Set<CandidateNode> atomic, RKDClassTask c, 
@@ -304,6 +314,15 @@ public class Algorithm {
 		cn.setScore(score);
 		print("Top element "+cn+" has score = "+score);
 		return -1.0 < score && score < 1.0;
+	}
+
+	public CandidateNode getAtomicCandidate(Property p) {
+		for(CandidateNode cn : atomicCandidates) {
+			Property p1 = cn.getProperties().iterator().next();
+			if(p == p1)
+				return cn;
+		}
+		return null;
 	}
 	
 }

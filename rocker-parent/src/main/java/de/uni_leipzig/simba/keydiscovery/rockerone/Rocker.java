@@ -37,6 +37,7 @@ public class Rocker implements Runnable {
 	public static final String WORKSPACE_DIR = System.getProperty("user.dir") + "/";
 	public static final String OUTPUT_PREFIX = bundle.getString("outputprefix");
 	public static final boolean ENABLE_VISUALIZATION = Boolean.parseBoolean(bundle.getString("visualization"));
+	private Algorithm algo;
 	private Set<CandidateNode> keysFound;
 	private String jsonString;
 	
@@ -63,7 +64,8 @@ public class Rocker implements Runnable {
 					? null
 					: WORKSPACE_DIR + OUTPUT_PREFIX + "_" + Randomly.getRandom() + ".n3";
 			
-			keysFound = new Algorithm(out, scr, cLass, find_one_key, fast_search).start();
+			algo = new Algorithm(out, scr, cLass, find_one_key, fast_search);
+			keysFound = algo.start();
 			sql.statementClose();
 			
 			if(ENABLE_VISUALIZATION)
@@ -87,6 +89,10 @@ public class Rocker implements Runnable {
 
 	public void setInputFile(String inputFile) {
 		this.inputFile = inputFile;
+	}
+
+	public Algorithm getAlgo() {
+		return algo;
 	}
 
 	public String getDataset() {
