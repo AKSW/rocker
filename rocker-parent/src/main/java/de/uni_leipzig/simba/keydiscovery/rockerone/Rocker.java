@@ -51,7 +51,7 @@ public class Rocker implements Runnable {
 		this.find_one_key = find_one_key;
 		this.fast_search = fast_search;
 		this.sql = new SQLiteManager(WORKSPACE_DIR + dataset);
-		LOGGER.info(WORKSPACE_DIR + dataset);
+		LOGGER.info("name: " + WORKSPACE_DIR + dataset);
 		this.scr = new Score(dataset, sql, quasi_keys_rate);
 	}
 

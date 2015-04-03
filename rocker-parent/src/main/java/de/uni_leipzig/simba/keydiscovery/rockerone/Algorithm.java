@@ -100,11 +100,12 @@ public class Algorithm {
 			Set<Property> pSet = new HashSet<Property>();
 			pSet.add(p);
 			CandidateNode cn = new CandidateNode(pSet);
+			atomicCandidates.add(cn);
 			double score = scr.getScore(c, cn);
 			cn.setScore(score);
 			print("Candidate: "+score+"\t|P|="+pSet.size()+"\t"+cn);
 			overallVisitedNodes++;
-			if(score == 1.0) {
+			if(cn.isAlmostKey()) {
 				keys.add(cn);
 				print("Key: "+cn);
 				if(FIND_ONE_KEY)
@@ -118,7 +119,6 @@ public class Algorithm {
 		while(itr.hasNext()) {
 			CandidateNode cand = itr.next();
 			print("score("+cand+") = "+cand.getScore());
-			atomicCandidates.add(cand);
 			if(cand.getScore() < 1E-3 && PROP_REDUCTION)
 				itr.remove();
 		}
@@ -318,13 +318,13 @@ public class Algorithm {
 		print("Top element "+cn+" has score = "+score);
 		if(topElement == null)
 			topElement = cn;
-		return -1.0 < score && score < 1.0;
+		return !cn.isAlmostKey();
 	}
 
 	public CandidateNode getAtomicCandidate(Property p) {
 		for(CandidateNode cn : atomicCandidates) {
 			Property p1 = cn.getProperties().iterator().next();
-			if(p == p1)
+			if(p.getURI().equals(p1.getURI()))
 				return cn;
 		}
 		return null;

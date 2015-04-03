@@ -62,7 +62,7 @@ public class Score {
 				String resourceID = hashes[0];
 				for(int i=1; i<hashes.length; i++) {
 					String hash = hashes[i];
-					// code for Atencia's supposedly wrong definition of keys
+					// code for Atencia's incomplete definition of keys
 					if(!ROCKER_KEY_DEFINITION)
 						if(hash.equals("null"))
 							continue outer;

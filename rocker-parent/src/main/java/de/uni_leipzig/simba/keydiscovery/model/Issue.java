@@ -33,8 +33,8 @@ public class Issue {
 		for(Property p : map.keySet()) {
 			Resource s = m.getResource(fres);
 			Set<RDFNode> objset = m.listObjectsOfProperty(s, p).toSet();
-			LOGGER.info("<"+s+"> <"+p+">");
-			LOGGER.info("size(objset) = "+objset.size());
+			LOGGER.debug("<"+s+"> <"+p+">");
+			LOGGER.debug("size(objset) = "+objset.size());
 			map.put(p, objset);
 			
 			// TODO
@@ -42,7 +42,7 @@ public class Issue {
 				;
 		}
 		
-		LOGGER.info(map);
+		LOGGER.debug(map);
 		
 	}
 
