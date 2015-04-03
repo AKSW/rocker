@@ -26,13 +26,13 @@ public class CandidateNode implements Comparable<CandidateNode> {
 	private int index;
 	private boolean isAlmostKey = false;
 	
-	private Set<String> faultyResourceURIs;
+	private Set<FaultyPair> faultyResourceURIs;
 
 	public CandidateNode(Set<Property> properties) {
 		this.properties = properties;
 //		this.index = index;
 		children = new ArrayList<CandidateNode>();
-		faultyResourceURIs = new TreeSet<String>();
+		faultyResourceURIs = new TreeSet<FaultyPair>();
 	}
 
 	public void setScore(double score) {
@@ -103,12 +103,12 @@ public class CandidateNode implements Comparable<CandidateNode> {
 		return false;
 	}
 
-	public Set<String> getFaultyResourceURIs() {
+	public Set<FaultyPair> getFaultyPairs() {
 		return faultyResourceURIs;
 	}
 
-	public void addFaultyResourceURI(String faultyResourceURI) {
-		this.faultyResourceURIs.add(faultyResourceURI);
+	public void addFaultyResourceURI(String sourceURI, String targetURI) {
+		this.faultyResourceURIs.add(new FaultyPair(sourceURI, targetURI));
 	}
 
 }

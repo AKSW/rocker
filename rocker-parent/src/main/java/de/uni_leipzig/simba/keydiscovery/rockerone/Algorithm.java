@@ -27,18 +27,21 @@ public class Algorithm {
 
 	private Set<CandidateNode> classKeys;
 	private List<CandidateNode> atomicCandidates;
+	private CandidateNode topElement;
 	private String outputFile;
 	private RKDClassTask c;
-	private boolean FIND_ONE_KEY, FAST_SEARCH;
+	private boolean FIND_ONE_KEY, FAST_SEARCH, PROP_REDUCTION;
 	private Score scr;
 	
 	private double overallVisitedNodes = 0.0;
+
 	
-	protected Algorithm(String outputFile, Score scr, RKDClassTask c, boolean FIND_ONE_KEY, boolean FAST_SEARCH) {
+	protected Algorithm(String outputFile, Score scr, RKDClassTask c, boolean FIND_ONE_KEY, boolean FAST_SEARCH, boolean PROP_REDUCTION) {
 		this.outputFile = outputFile;
 		this.c = c;
 		this.FIND_ONE_KEY = FIND_ONE_KEY;
 		this.FAST_SEARCH = FAST_SEARCH;
+		this.PROP_REDUCTION = PROP_REDUCTION;
 		this.scr = scr;
 	}
 
@@ -116,7 +119,7 @@ public class Algorithm {
 			CandidateNode cand = itr.next();
 			print("score("+cand+") = "+cand.getScore());
 			atomicCandidates.add(cand);
-			if(cand.getScore() < 1E-3)
+			if(cand.getScore() < 1E-3 && PROP_REDUCTION)
 				itr.remove();
 		}
 		TreeSet<CandidateNode> frontierBackup = new TreeSet<>(frontier);
@@ -132,7 +135,7 @@ public class Algorithm {
 			atomicMap.put(a.toString(), a.getScore());
 		// set of maximal non-keys
 		maxNonKeys = new TreeSet<CandidateNode>(frontier);
-		// XXX I turned this off because now it's quite fast
+		
 		if(hasNoKey(atomic, c)) {
 			print("No key found.");
 			return;
@@ -313,6 +316,8 @@ public class Algorithm {
 		double score = scr.getScore(c, cn);
 		cn.setScore(score);
 		print("Top element "+cn+" has score = "+score);
+		if(topElement == null)
+			topElement = cn;
 		return -1.0 < score && score < 1.0;
 	}
 
@@ -323,6 +328,10 @@ public class Algorithm {
 				return cn;
 		}
 		return null;
+	}
+
+	public CandidateNode getTopElement() {
+		return topElement;
 	}
 	
 }

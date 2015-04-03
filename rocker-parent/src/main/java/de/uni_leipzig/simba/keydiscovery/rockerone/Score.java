@@ -71,9 +71,8 @@ public class Score {
 				if(distincts.add(composed)) {
 					hashToURI.put(composed, resourceID);
 				} else {
-//					LOGGER.info(resourceID + " is faulty for " + cn);
-					cn.addFaultyResourceURI(hashToURI.get(composed));
-					cn.addFaultyResourceURI(resourceID);
+					LOGGER.debug(resourceID + " is faulty for " + cn);
+					cn.addFaultyResourceURI(hashToURI.get(composed), resourceID);
 				}
 			}
 		} catch (SQLException e) {

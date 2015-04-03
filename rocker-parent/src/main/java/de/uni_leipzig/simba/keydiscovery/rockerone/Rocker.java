@@ -14,6 +14,7 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 
 import de.uni_leipzig.simba.keydiscovery.model.CandidateNode;
+import de.uni_leipzig.simba.keydiscovery.model.FaultyPair;
 import de.uni_leipzig.simba.keydiscovery.model.Issue;
 import de.uni_leipzig.simba.keydiscovery.model.RKDClassTask;
 import de.uni_leipzig.simba.keydiscovery.rockerone.db.SQLiteManager;
@@ -29,7 +30,8 @@ public class Rocker implements Runnable {
 	private final static Logger LOGGER = Logger.getLogger("ROCKER");
 
 	private String dataset, inputFile, classname;
-	private boolean find_one_key, fast_search;
+	private boolean find_one_key, fast_search, prop_reduction = 
+			Boolean.parseBoolean(bundle.getString("propreduction"));
 	private SQLiteManager sql;
 	private Score scr;
 	public static final ResourceBundle bundle =
@@ -64,7 +66,7 @@ public class Rocker implements Runnable {
 					? null
 					: WORKSPACE_DIR + OUTPUT_PREFIX + "_" + Randomly.getRandom() + ".n3";
 			
-			algo = new Algorithm(out, scr, cLass, find_one_key, fast_search);
+			algo = new Algorithm(out, scr, cLass, find_one_key, fast_search, prop_reduction);
 			keysFound = algo.start();
 			sql.statementClose();
 			
@@ -139,7 +141,7 @@ public class Rocker implements Runnable {
 			JSONArray issues = new JSONArray();
 			key.put("issues", issues);
 			
-			for(String fres : cn.getFaultyResourceURIs()) {
+			for(FaultyPair fpair : cn.getFaultyPairs()) {
 				JSONObject issue = new JSONObject();
 				/* 
 				 * put objectgroups
@@ -148,9 +150,9 @@ public class Rocker implements Runnable {
 				 * 
 				 */
 				Issue is = new Issue(cn.getProperties());
-				is.compute(fres, m);
+				is.compute(fpair.getSourceURI(), m);
 				
-				// TODO
+				// TODO also for target!
 				
 				issues.add(issue);
 			}
