@@ -16,6 +16,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+    <scm>
+        <connection>scm:git:git@github.com:AKSW/rocker.git</connection>
+    </scm>
+
+
+
     <build>
         <plugins>
             <!-- That's a sledge hammer solution - but at least it works ... -->
