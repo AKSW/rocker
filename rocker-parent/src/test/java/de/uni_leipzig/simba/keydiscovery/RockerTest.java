@@ -20,7 +20,7 @@ import de.uni_leipzig.simba.keydiscovery.rockerone.Rocker;
  */
 public class RockerTest {
 
-    //@Test
+    @Test
     public void testGetKeys() {
 
         String name = "person11";
