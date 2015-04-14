@@ -17,6 +17,7 @@
 
     <scm>
         <connection>scm:git:git@github.com:AKSW/rocker.git</connection>
+    <tag>HEAD</tag>
   </scm>
 
 
@@ -27,7 +28,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5</version>
+                <version>2.5.1</version>
                 <configuration>
                     <arguments>-P!source-artifacts</arguments>
                     <useReleaseProfile>false</useReleaseProfile>
