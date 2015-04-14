@@ -17,7 +17,6 @@
 
     <scm>
         <connection>scm:git:git@github.com:AKSW/rocker.git</connection>
-      <tag>HEAD</tag>
   </scm>
 
 
