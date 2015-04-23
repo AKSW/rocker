@@ -7,7 +7,7 @@ import de.uni_leipzig.simba.keydiscovery.model.CandidateNode;
 import de.uni_leipzig.simba.keydiscovery.rockerone.Rocker;
 
 /**
- * @author Tommaso Soru <t.soru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
 public class RockerKeyDiscovery implements IKeyDiscovery {

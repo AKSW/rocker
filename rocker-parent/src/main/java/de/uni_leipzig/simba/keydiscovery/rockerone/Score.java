@@ -15,7 +15,7 @@ import de.uni_leipzig.simba.keydiscovery.model.RKDClassTask;
 import de.uni_leipzig.simba.keydiscovery.rockerone.db.SQLiteManager;
 
 /**
- * @author Tommaso Soru <t.soru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
 public class Score {

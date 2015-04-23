@@ -15,7 +15,7 @@ import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import de.uni_leipzig.simba.keydiscovery.util.Randomly;
 
 /**
- * @author Tommaso Soru <t.soru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
 public class SQLiteManager {
