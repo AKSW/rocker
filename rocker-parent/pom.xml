@@ -24,6 +24,20 @@
 
     <build>
         <plugins>
+        	<!--  Needed for Rocker demo (uber jar) -->
+		    <plugin>
+		      <artifactId>maven-assembly-plugin</artifactId>
+		      <configuration>
+		        <archive>
+		          <manifest>
+		            <mainClass>fully.qualified.MainClass</mainClass>
+		          </manifest>
+		        </archive>
+		        <descriptorRefs>
+		          <descriptorRef>jar-with-dependencies</descriptorRef>
+		        </descriptorRefs>
+		      </configuration>
+		    </plugin>
             <!-- That's a sledge hammer solution - but at least it works ... -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

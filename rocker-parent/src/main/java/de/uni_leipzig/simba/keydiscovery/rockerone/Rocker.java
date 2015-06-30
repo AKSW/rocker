@@ -36,7 +36,7 @@ public class Rocker implements Runnable {
 	private Score scr;
 	public static final ResourceBundle bundle =
             ResourceBundle.getBundle("rocker");
-	public static final String WORKSPACE_DIR = System.getProperty("user.dir") + "/";
+	public static String WORKSPACE_DIR;
 	public static final String OUTPUT_PREFIX = bundle.getString("outputprefix");
 	public static final boolean ENABLE_VISUALIZATION = Boolean.parseBoolean(bundle.getString("visualization"));
 	private Algorithm algo;
@@ -45,6 +45,12 @@ public class Rocker implements Runnable {
 	
 	public Rocker(String dataset, String inputFile, String classname, boolean find_one_key,
 			boolean fast_search, double quasi_keys_rate) throws ClassNotFoundException, SQLException {
+		
+		if(bundle.containsKey("workspace"))
+			WORKSPACE_DIR = bundle.getString("workspace") + "/";
+		else
+			WORKSPACE_DIR = System.getProperty("user.dir");
+		
 		this.setDataset(dataset);
 		this.setInputFile(inputFile);
 		this.setClassname(classname);
