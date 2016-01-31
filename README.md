@@ -1,6 +1,8 @@
-# ROCKER ─ A Refinement Operator for Key Discovery #
+## ROCKER: A Refinement Operator for Key Discovery ##
 
-## Run from terminal ##
+[![Build Status](http://ci.aksw.org/jenkins/buildStatus/icon?job=Rocker)](http://ci.aksw.org/jenkins/view/All/job/Rocker/)
+
+### Run from terminal ###
 
 First, download the [full jar package](https://github.com/AKSW/rocker/releases/download/v1.2.1/rocker-1.2.1-full.jar), which also contains all required dependencies. Datasets are available here:
 
@@ -36,7 +38,7 @@ java -Xmx8g -jar rocker-1.2.1-full.jar "restaurant_1" "file:///home/rocker/OAEI_
 
 We recommend to run your experiments on a machine with at least 8 GB of RAM.
 
-## Java library ##
+### Java library ###
 
 You may also download the [Java library](https://github.com/AKSW/rocker/releases/download/v1.2.1/rocker-1.2.1.jar) without dependencies.
 
@@ -48,7 +50,7 @@ r.run();
 Set<CandidateNode> results = r.getKeys();
 ```
 
-## Citing ROCKER ##
+### Citing ROCKER ###
 
 Please refer to the paper *T. Soru, E. Marx, A.-C. Ngonga Ngomo, "ROCKER ─ A Refinement Operator for Key Discovery"*, in proceedings of the 24th International Conference on World Wide Web, WWW 2015. [[pdf](http://svn.aksw.org/papers/2015/WWW_Rocker/public.pdf)]
 
