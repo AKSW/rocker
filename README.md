@@ -38,11 +38,29 @@ java -Xmx8g -jar rocker-1.2.1-full.jar "restaurant_1" "file:///home/rocker/OAEI_
 
 We recommend to run your experiments on a machine with at least 8 GB of RAM.
 
+### Maven
+
+```xml
+<repository>
+    <id>maven.aksw.internal</id>
+    <name>University Leipzig, AKSW Maven2 Repository</name>
+    <url>http://maven.aksw.org/archiva/repository/internal</url>
+</repository>
+...
+<dependency>
+    <groupId>org.aksw.rocker</groupId>
+    <artifactId>rocker</artifactId>
+    <version>1.3.1</version>
+</dependency>
+```
+
 ### Java library ###
 
 You may also download the [Java library](https://github.com/AKSW/rocker/releases/download/v1.2.1/rocker-1.2.1.jar) without dependencies.
 
-```
+### Basic usage ###
+
+```java
 Rocker r = null;
 r = new Rocker("restaurant_1", "file:///home/rocker/OAEI_2011_Restaurant_1.nt",
         "http://www.okkam.org/ontology_restaurant1.owl#Restaurant", false, true, 1.0);
