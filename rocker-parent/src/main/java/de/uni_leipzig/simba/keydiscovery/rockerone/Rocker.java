@@ -49,7 +49,7 @@ public class Rocker implements Runnable {
 		if(bundle.containsKey("workspace"))
 			WORKSPACE_DIR = bundle.getString("workspace") + "/";
 		else
-			WORKSPACE_DIR = System.getProperty("user.dir");
+			WORKSPACE_DIR = System.getProperty("user.dir") + "/";
 		
 		this.setDataset(dataset);
 		this.setInputFile(inputFile);
@@ -57,7 +57,9 @@ public class Rocker implements Runnable {
 		this.find_one_key = find_one_key;
 		this.fast_search = fast_search;
 		this.sql = new SQLiteManager(WORKSPACE_DIR + dataset);
-		LOGGER.info("name: " + WORKSPACE_DIR + dataset);
+		LOGGER.info("name: " + dataset);
+		LOGGER.info("workspace: " + WORKSPACE_DIR);
+		LOGGER.info("file URI: " + inputFile);
 		this.scr = new Score(dataset, sql, quasi_keys_rate);
 	}
 

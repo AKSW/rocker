@@ -25,6 +25,11 @@ public class RockerTest {
 
         String name = "person11";
         String workingDir = System.getProperty("user.dir");
+        
+        // compatibility with Windows systems
+        if(!workingDir.startsWith("/"))
+        	workingDir = "/" + workingDir;
+        
         String file = "file://"+workingDir+"/src/main/resources/OAEI_2011_Person1_1.nt";
         String classname = "http://www.okkam.org/ontology_person1.owl#Person";
 
