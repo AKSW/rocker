@@ -70,5 +70,24 @@ Set<CandidateNode> results = r.getKeys();
 
 ### Citing ROCKER ###
 
-Please refer to the paper *T. Soru, E. Marx, A.-C. Ngonga Ngomo, "ROCKER ─ A Refinement Operator for Key Discovery"*, in proceedings of the 24th International Conference on World Wide Web, WWW 2015. [[pdf](http://svn.aksw.org/papers/2015/WWW_Rocker/public.pdf)]
+Please refer to the paper *T. Soru, E. Marx, A.-C. Ngonga Ngomo, "ROCKER: A Refinement Operator for Key Discovery"*, in proceedings of the 24th International Conference on World Wide Web, WWW 2015. [[PDF](http://svn.aksw.org/papers/2015/WWW_Rocker/public.pdf)] [[ACM](http://dl.acm.org/citation.cfm?id=2741642)]
 
+```
+@inproceedings{Soru:2015:RRO:2736277.2741642,
+ author = {Soru, Tommaso and Marx, Edgard and {Ngonga Ngomo}, Axel-Cyrille},
+ title = {ROCKER: A Refinement Operator for Key Discovery},
+ booktitle = {Proceedings of the 24th International Conference on World Wide Web},
+ series = {WWW '15},
+ year = {2015},
+ isbn = {978-1-4503-3469-3},
+ location = {Florence, Italy},
+ pages = {1025--1033},
+ numpages = {9},
+ url = {http://doi.acm.org/10.1145/2736277.2741642},
+ doi = {10.1145/2736277.2741642},
+ acmid = {2741642},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {key discovery, link discovery, linked data, refinement operators, semantic web},
+}
+```
