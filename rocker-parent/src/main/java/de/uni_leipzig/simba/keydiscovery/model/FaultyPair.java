@@ -1,7 +1,7 @@
 package de.uni_leipzig.simba.keydiscovery.model;
 
 /**
- * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru {@literal (tsoru@informatik.uni-leipzig.de)}
  *
  */
 public class FaultyPair implements Comparable<FaultyPair> {

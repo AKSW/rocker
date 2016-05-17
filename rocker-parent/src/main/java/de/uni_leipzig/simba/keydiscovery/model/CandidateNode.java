@@ -13,7 +13,7 @@ import java.util.TreeSet;
 /**
  * 
  * @author ngonga
- * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru {@literal (tsoru@informatik.uni-leipzig.de)}
  *
  */
 public class CandidateNode implements Comparable<CandidateNode> {

@@ -14,7 +14,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
 
 /**
  * @author Mohamed Sherif
- * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru {@literal (tsoru@informatik.uni-leipzig.de)}
  *
  */
 public class CBDBuilder {

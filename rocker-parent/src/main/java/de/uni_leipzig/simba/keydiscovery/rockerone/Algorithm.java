@@ -18,7 +18,7 @@ import de.uni_leipzig.simba.keydiscovery.model.RKDClassTask;
 import de.uni_leipzig.simba.keydiscovery.util.Timer;
 
 /**
- * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru {@literal (tsoru@informatik.uni-leipzig.de)}
  *
  */
 public class Algorithm {

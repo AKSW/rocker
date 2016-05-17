@@ -11,7 +11,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
 /**
  * A refinement key discovery task on a given class.
  * 
- * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
+ * @author Tommaso Soru {@literal (tsoru@informatik.uni-leipzig.de)}
  * 
  */
 public class RKDClassTask implements Comparable<RKDClassTask> {
