@@ -2,6 +2,10 @@
 
 [![Build Status](http://ci.aksw.org/jenkins/buildStatus/icon?job=Rocker)](http://ci.aksw.org/jenkins/view/All/job/Rocker/)
 
+### Demo ###
+
+A demo of ROCKER for Data Quality is running at http://rocker.aksw.org. It offers a web interface with accessible APIs. For computations on large datasets, please follow the guide below.
+
 ### Run from terminal ###
 
 First, download the [full jar package](https://github.com/AKSW/rocker/releases/download/v1.2.1/rocker-1.2.1-full.jar), which also contains all required dependencies. Datasets are available here:
